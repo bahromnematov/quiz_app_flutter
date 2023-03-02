@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quiz_app_flutter/screens/result_screen.dart';
 import 'package:quiz_app_flutter/utils/colors.dart';
 import 'package:quiz_app_flutter/utils/icons.dart';
+import 'package:quiz_app_flutter/utils/utility_functions.dart';
+import 'package:quiz_app_flutter/widgets/MyButton.dart';
 
 import '../model/quiz_data.dart';
 import '../widgets/variant_item.dart';
@@ -149,7 +152,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         isSelected: selectedVariant == "A",
                         onTap: () {
                           setState(
-                                () {
+                            () {
                               selectedVariant = "A";
                             },
                           );
@@ -179,7 +182,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         isSelected: selectedVariant == "D",
                         onTap: () {
                           setState(
-                                () {
+                            () {
                               selectedVariant = "D";
                             },
                           );
@@ -188,6 +191,59 @@ class _QuizScreenState extends State<QuizScreen> {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Center(
+                  child: MyButton(
+                    buttonText: 'Next',
+                    onTap: () {
+                      setState(() {
+                        if (selectedVariant != "") {
+                          if (currentQuestionIndex + 1 <
+                              widget.quizList.length) {
+                            if (selectedVariant ==
+                                widget.quizList[currentQuestionIndex]
+                                    .trueAnswer) {
+                              choseAnswers.add(true);
+                              trueQuestionCount += 1;
+                            } else {
+                              choseAnswers.add(false);
+                            }
+                            currentQuestionIndex++;
+                            expandableValue++;
+                            selectedVariant = "";
+                          } else if (currentQuestionIndex + 1 ==
+                              widget.quizList.length) {
+                            if (selectedVariant ==
+                                widget.quizList[currentQuestionIndex]
+                                    .trueAnswer) {
+                              choseAnswers.add(true);
+                              trueQuestionCount += 1;
+                            } else {
+                              choseAnswers.add(false);
+                            }
+                            Navigator.pushReplacement(context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) {
+                              return ResultScreen(
+                                  // totalQuestionsCount: widget.quizList.length,
+                                  // trueQuestionsCount: trueQuestionCount,
+                                  // answers: choseAnswers,
+                                  // percentage: trueQuestionCount /
+                                  //     widget.quizList.length *
+                                  //     100,
+                                  );
+                            }));
+                          }
+                        } else {
+                          UtilityFunctions.getMyToast(
+                              message: "Select variants");
+                        }
+                      });
+                    },
+                  ),
+                )
               ],
             ),
           ),
