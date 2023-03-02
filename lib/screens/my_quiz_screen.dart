@@ -58,15 +58,14 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.yellowBar,
                   direction: 1,
-                  questionsCount: 4,
+                  questionsCount: 5,
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                      return QuizScreen();
+                      return QuizScreen(quizList: [], quizName: '',);
                     }
                     ));
                   }),
-
               SelectTestsItem(
                   subjectName: "Englesh",
                   iconPath: MyIcons.bookStack,
@@ -76,7 +75,46 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                          return QuizScreen();
+                          return QuizScreen(quizList: [], quizName: '',);
+                        }
+                        ));
+                  }),
+              SelectTestsItem(
+                  subjectName: "Matematika",
+                  iconPath: MyIcons.bookStack,
+                  gradientColors: MyColors.greenBar,
+                  direction: 1,
+                  questionsCount: 5,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return QuizScreen(quizList: [], quizName: '',);
+                        }
+                        ));
+                  }),
+              SelectTestsItem(
+                  subjectName: "Sport",
+                  iconPath: MyIcons.bookStack,
+                  gradientColors: MyColors.redBar,
+                  direction: 1,
+                  questionsCount: 5,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const QuizScreen(quizList: [], quizName: '',);
+                        }
+                        ));
+                  }),
+              SelectTestsItem(
+                  subjectName: "Sciens",
+                  iconPath: MyIcons.bookStack,
+                  gradientColors: MyColors.purpleBar,
+                  direction: 1,
+                  questionsCount: 5,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return QuizScreen(quizList: [], quizName: '',);
                         }
                         ));
                   }),
