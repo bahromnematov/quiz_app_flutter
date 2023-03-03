@@ -227,12 +227,12 @@ class _QuizScreenState extends State<QuizScreen> {
                                 MaterialPageRoute(
                                     builder: (BuildContext context) {
                               return ResultScreen(
-                                  // totalQuestionsCount: widget.quizList.length,
-                                  // trueQuestionsCount: trueQuestionCount,
-                                  // answers: choseAnswers,
-                                  // percentage: trueQuestionCount /
-                                  //     widget.quizList.length *
-                                  //     100,
+                                  totalQuestionCount: widget.quizList.length,
+                                  trueQuestionCount: trueQuestionCount,
+                                  answers: choseAnswers,
+                                  percentage: trueQuestionCount /
+                                      widget.quizList.length *
+                                      100,
                                   );
                             }));
                           }

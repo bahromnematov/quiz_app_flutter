@@ -62,7 +62,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                      return QuizScreen(quizList: [], quizName: '',);
+                      return  QuizScreen(quizList: biologiyaSet, quizName: 'Biologiya',);
                     }
                     ));
                   }),
@@ -75,7 +75,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                          return QuizScreen(quizList: [], quizName: '',);
+                          return QuizScreen(quizList: englishSet, quizName: 'Englesh',);
                         }
                         ));
                   }),
@@ -88,7 +88,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                          return QuizScreen(quizList: [], quizName: '',);
+                          return QuizScreen(quizList: mathSet, quizName: 'Matematika',);
                         }
                         ));
                   }),
@@ -101,7 +101,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                          return const QuizScreen(quizList: [], quizName: '',);
+                          return  QuizScreen(quizList: sportSet, quizName: 'Sport',);
                         }
                         ));
                   }),
@@ -114,7 +114,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                          return QuizScreen(quizList: [], quizName: '',);
+                          return QuizScreen(quizList: sportSet, quizName: 'Sciens',);
                         }
                         ));
                   }),
