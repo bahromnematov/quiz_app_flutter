@@ -16,6 +16,9 @@ class MyIcons {
   static const cancel = "assets/images/cancel.png";
   static const close = "assets/images/close.png";
   static const checked = "assets/images/checked.png";
+  static const info = "assets/images/info.png";
+  static const biologiya = "assets/images/biologiya.png";
+  static const quiz = "assets/images/quizss.png";
 
   // .svg
   static const badge = "assets/svg/badge.svg";

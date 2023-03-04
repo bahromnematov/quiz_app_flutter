@@ -11,6 +11,7 @@ import 'package:quiz_app_flutter/widgets/select_test_item.dart';
 
 import '../data/biologiya_quiz_repository.dart';
 import '../model/quiz_data.dart';
+import 'info_screen.dart';
 
 class MyQuizScreen extends StatefulWidget {
   const MyQuizScreen({Key? key}) : super(key: key);
@@ -37,12 +38,19 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
             statusBarColor: MyColors.C_6066D0,
             statusBarBrightness: Brightness.light,
             statusBarIconBrightness: Brightness.light),
-        leading: Image.asset(MyIcons.user),
+        leading: Image.asset(MyIcons.wallet,),
         title: Image.asset(
           MyIcons.whiteLogo,
           width: 120,
         ),
-        actions: [Image.asset(MyIcons.wallet)],
+        actions: [InkWell(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+              return InfoScreen();
+            }));
+          },
+            child: Image.asset(MyIcons.info,scale: 6.7,)
+        )],
         elevation: 0,
         centerTitle: true,
       ),
