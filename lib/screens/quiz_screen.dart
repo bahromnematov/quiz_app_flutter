@@ -32,9 +32,9 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyColors.C_4047C1,
+        backgroundColor: Colors.black54,
         systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: MyColors.C_4047C1,
+          statusBarColor: Colors.black54,
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.light,
         ),

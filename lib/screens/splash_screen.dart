@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_flutter/screens/intro_page.dart';
 import 'package:quiz_app_flutter/screens/quiz_screen.dart';
 
 import 'my_quiz_screen.dart';
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Future.delayed(const Duration(seconds: 3), () {
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (BuildContext context) {
-              return  const MyQuizScreen();
+              return   IntroPage();
             }));
       });
 
