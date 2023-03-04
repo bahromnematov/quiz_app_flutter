@@ -58,7 +58,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.yellowBar,
                   direction: 1,
-                  questionsCount: 5,
+                  questionsCount: 10,
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
@@ -71,7 +71,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.blueBar,
                   direction: 1,
-                  questionsCount: 5,
+                  questionsCount: 10,
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
@@ -84,7 +84,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.greenBar,
                   direction: 1,
-                  questionsCount: 5,
+                  questionsCount: 10,
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
@@ -97,7 +97,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.redBar,
                   direction: 1,
-                  questionsCount: 5,
+                  questionsCount: 10,
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
@@ -110,7 +110,7 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.purpleBar,
                   direction: 1,
-                  questionsCount: 5,
+                  questionsCount: 10,
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
