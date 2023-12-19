@@ -42,8 +42,7 @@ class BiologiyaQuizRepository {
         trueAnswer: "B"));
 //5
     data.add(QuizData(
-        questionText:
-            "Novda nima ?",
+        questionText: "Novda nima ?",
         v1: "A.daraxtlarning o'zida kurtak va barg hosil qiladigan bir yillik shoxi",
         v2: "B.butalar (yarim buta)ning o'zida kurtak va barg hosil qiladigan bir yillik shoxi",
         v3: "C.urug'dan unib chiqqan bir yillik nihol",
@@ -51,8 +50,7 @@ class BiologiyaQuizRepository {
         trueAnswer: "D"));
 //6
     data.add(QuizData(
-        questionText:
-            "Har 100 metrda nima o’zgaradi?",
+        questionText: "Har 100 metrda nima o’zgaradi?",
         v1: "A.balandlikda 0,6 0C   pasayadi, chuqurlikda +3 0C   ortadi",
         v2: "B.balandlikda 0,6 0C   ortadi, chuqurlikda +3 0C   pasayadi",
         v3: "C.balandlikda +3 0C   pasayadi, chuqurlikda 0,6 0C   ortadi",
@@ -69,8 +67,7 @@ class BiologiyaQuizRepository {
         trueAnswer: "B"));
 //8
     data.add(QuizData(
-        questionText:
-            "Biosferadagi tirik moddalarni nimalar tashkil qiladi?",
+        questionText: "Biosferadagi tirik moddalarni nimalar tashkil qiladi?",
         v1: "A.Produsentlar, konsumentlar va redusentlar",
         v2: "B.O’simliklar, hayvonlar",
         v3: "C.Produsentlar va redusentlar",
@@ -96,9 +93,5 @@ class BiologiyaQuizRepository {
         trueAnswer: "A"));
 
     return data;
-
   }
-
-
-
 }

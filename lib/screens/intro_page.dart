@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app_flutter/screens/my_quiz_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils/Strings.dart';
 import 'info_screen.dart';
@@ -36,10 +37,11 @@ class _IntroPageState extends State<IntroPage> {
         backgroundColor: Colors.black,
         actions: [
           GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                return MyQuizScreen();
-              }));
+            onTap: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              prefs.setBool('showIntro', false);
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => MyQuizScreen()));
             },
             child: Padding(
               padding: EdgeInsets.only(right: 20, left: 20),

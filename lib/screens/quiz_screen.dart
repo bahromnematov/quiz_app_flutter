@@ -46,14 +46,14 @@ class _QuizScreenState extends State<QuizScreen> {
               fontWeight: FontWeight.w700),
         ),
         actions: [
-          Image.asset(
-            MyIcons.purpleWallet,
-            height: 35.h,
-            width: 35.h,
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
+          // Image.asset(
+          //   MyIcons.purpleWallet,
+          //   height: 35.h,
+          //   width: 35.h,
+          // ),
+          // SizedBox(
+          //   width: 10.w,
+          // ),
         ],
         centerTitle: true,
         elevation: 0,
@@ -227,13 +227,13 @@ class _QuizScreenState extends State<QuizScreen> {
                                 MaterialPageRoute(
                                     builder: (BuildContext context) {
                               return ResultScreen(
-                                  totalQuestionCount: widget.quizList.length,
-                                  trueQuestionCount: trueQuestionCount,
-                                  answers: choseAnswers,
-                                  percentage: trueQuestionCount /
-                                      widget.quizList.length *
-                                      100,
-                                  );
+                                totalQuestionCount: widget.quizList.length,
+                                trueQuestionCount: trueQuestionCount,
+                                answers: choseAnswers,
+                                percentage: trueQuestionCount /
+                                    widget.quizList.length *
+                                    100,
+                              );
                             }));
                           }
                         } else {

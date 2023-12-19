@@ -63,15 +63,16 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
         elevation: 0,
         centerTitle: true,
       ),
+
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [Colors.black, Colors.greenAccent]),
-          ),
+          // decoration: BoxDecoration(
+          //   gradient: LinearGradient(
+          //       begin: Alignment.topRight,
+          //       end: Alignment.bottomLeft,
+          //       colors: [Colors.black, Colors.greenAccent]),
+          // ),
           padding:
               EdgeInsets.only(bottom: 40.h, right: 15.w, left: 15.w, top: 10.h),
           child: Column(

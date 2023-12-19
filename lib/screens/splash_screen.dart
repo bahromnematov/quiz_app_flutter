@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app_flutter/screens/intro_page.dart';
-import 'package:quiz_app_flutter/screens/quiz_screen.dart';
-
-import 'my_quiz_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -12,17 +9,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-
   @override
   Widget build(BuildContext context) {
-
-      Future.delayed(const Duration(seconds: 3), () {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (BuildContext context) {
-              return   IntroPage();
-            }));
-      });
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (BuildContext context) {
+        return IntroPage();
+      }));
+    });
 
     return const Scaffold(
       backgroundColor: Colors.amberAccent,
