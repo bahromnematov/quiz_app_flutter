@@ -9,7 +9,6 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
-
   bool showIntro = prefs.getBool('showIntro') ?? true;
 
   runApp(MyApp(showIntro: showIntro));
