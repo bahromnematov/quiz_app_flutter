@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_app_flutter/screens/result_screen.dart';
 import 'package:quiz_app_flutter/utils/colors.dart';
-import 'package:quiz_app_flutter/utils/icons.dart';
 import 'package:quiz_app_flutter/utils/utility_functions.dart';
 import 'package:quiz_app_flutter/widgets/MyButton.dart';
 

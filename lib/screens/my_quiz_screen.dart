@@ -14,6 +14,7 @@ import '../model/quiz_data.dart';
 import 'info_screen.dart';
 
 class MyQuizScreen extends StatefulWidget {
+  static final String id="myQuiz";
   const MyQuizScreen({
     Key? key,
   }) : super(key: key);
@@ -23,7 +24,7 @@ class MyQuizScreen extends StatefulWidget {
 }
 
 class _MyQuizScreenState extends State<MyQuizScreen> {
-  State<MyQuizScreen> createState() => _MyQuizScreenState();
+  // State<MyQuizScreen> createState() => _MyQuizScreenState();
   List<QuizData> biologiyaSet = BiologiyaQuizRepository.biologySet();
   List<QuizData> englishSet = EngleshQuizRepository.engleshSet();
   List<QuizData> mathSet = MathQuizRepository.mathSet();
@@ -65,14 +66,9 @@ class _MyQuizScreenState extends State<MyQuizScreen> {
       ),
 
       body: SingleChildScrollView(
+
         physics: const BouncingScrollPhysics(),
         child: Container(
-          // decoration: BoxDecoration(
-          //   gradient: LinearGradient(
-          //       begin: Alignment.topRight,
-          //       end: Alignment.bottomLeft,
-          //       colors: [Colors.black, Colors.greenAccent]),
-          // ),
           padding:
               EdgeInsets.only(bottom: 40.h, right: 15.w, left: 15.w, top: 10.h),
           child: Column(
