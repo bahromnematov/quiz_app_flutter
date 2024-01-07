@@ -11,9 +11,6 @@ import '../model/quiz_data.dart';
 import '../widgets/variant_item.dart';
 
 class QuizScreen extends StatefulWidget {
-
-
-
   final List<QuizData> quizList;
   final String quizName;
 
@@ -33,8 +30,6 @@ class _QuizScreenState extends State<QuizScreen> {
   final CountDownController _controller = CountDownController();
 
   final int duration = 6;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -90,100 +85,105 @@ class _QuizScreenState extends State<QuizScreen> {
                       Expanded(
                         flex: 5,
                         child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w),
-                        height: 50.h,
-                        decoration: BoxDecoration(
-                            border:
-                            Border.all(color: Colors.grey.shade300, width: 2.w),
-                            borderRadius: BorderRadius.circular(26.r)),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                height: 16.h,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      spreadRadius: 4,
-                                      blurRadius: 4,
-                                      offset: const Offset(1, 4),
-                                      color: Colors.grey.shade200,
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(26.r),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: expandableValue,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: MyColors.C_FCA82F,
-                                          borderRadius: BorderRadius.circular(26.r),
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
+                          height: 50.h,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Colors.grey.shade300, width: 2.w),
+                              borderRadius: BorderRadius.circular(26.r)),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  height: 16.h,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        spreadRadius: 4,
+                                        blurRadius: 4,
+                                        offset: const Offset(1, 4),
+                                        color: Colors.grey.shade200,
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(26.r),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        flex: expandableValue,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: MyColors.C_FCA82F,
+                                            borderRadius:
+                                                BorderRadius.circular(26.r),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    Expanded(
-                                        flex:
-                                        widget.quizList.length - expandableValue,
-                                        child: SizedBox()),
-                                  ],
+                                      Expanded(
+                                          flex: widget.quizList.length -
+                                              expandableValue,
+                                          child: SizedBox()),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 8.w,
-                            ),
-                            Text(
-                              "$expandableValue/${widget.quizList.length}",
-                              style: const TextStyle(fontWeight: FontWeight.w500),
-                            ),
-                          ],
+                              SizedBox(
+                                width: 8.w,
+                              ),
+                              Text(
+                                "$expandableValue/${widget.quizList.length}",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),),
+                      ),
                       Expanded(
                         flex: 2,
-                          child:  CircularCountDownTimer(
-                            width: 50,
-                            height: 50,
-                            duration: duration,
-                            fillColor: Colors.white,
-                            ringColor: Colors.amber,
-                            textStyle: const TextStyle(
-                              fontSize: 25,
-                              color: Colors.amber,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            autoStart: true,
-                            isReverse: true,
-                            controller: _controller,
-                            onComplete: () {
-                              if (currentQuestionIndex < 9&&selectedVariant=="") {
-                                setState(() {
-                                  choseAnswers.add(false);
-                                  expandableValue++;
-                                  currentQuestionIndex++;
-                                });
-                                _controller.restart();
-                              } else {
-                                // Navigator.pop(context);
-                                // Navigator.pop(context);
-                                Navigator.pushReplacement(context,
-                                    MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                          return ResultScreen(
-                                            totalQuestionCount: widget.quizList.length,
-                                            trueQuestionCount: trueQuestionCount,
-                                            answers: choseAnswers,
-                                            percentage: trueQuestionCount /
-                                                widget.quizList.length *
-                                                100,
-                                          );
-                                        }));
-                              }
-                            },
-                          ),)
+                        child: CircularCountDownTimer(
+                          width: 50,
+                          height: 50,
+                          duration: duration,
+                          fillColor: Colors.white,
+                          ringColor: Colors.amber,
+                          textStyle: const TextStyle(
+                            fontSize: 25,
+                            color: Colors.amber,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          autoStart: true,
+                          isReverse: true,
+                          controller: _controller,
+                          onComplete: () {
+                            if (currentQuestionIndex < 9) {
+                              setState(() {
+                                choseAnswers.add(false);
+                                expandableValue++;
+                                currentQuestionIndex++;
+                                selectedVariant = "";
+                              });
+                              _controller.restart();
+                            } else {
+                              // Navigator.pop(context);
+                              // Navigator.pop(context);
+                              Navigator.pushReplacement(context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) {
+                                return ResultScreen(
+                                  totalQuestionCount: widget.quizList.length,
+                                  trueQuestionCount: trueQuestionCount,
+                                  answers: choseAnswers,
+                                  percentage: trueQuestionCount /
+                                      widget.quizList.length *
+                                      100,
+                                );
+                              }));
+                            }
+                          },
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -276,7 +276,6 @@ class _QuizScreenState extends State<QuizScreen> {
                             selectedVariant = "";
                           } else if (currentQuestionIndex + 1 ==
                               widget.quizList.length) {
-
                             if (selectedVariant ==
                                 widget.quizList[currentQuestionIndex]
                                     .trueAnswer) {

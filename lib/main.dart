@@ -5,7 +5,6 @@ import 'package:quiz_app_flutter/screens/my_quiz_screen.dart';
 import 'package:quiz_app_flutter/screens/splash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
